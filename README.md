@@ -4,7 +4,7 @@ The main purpose of this project is to combine several concepts of Internet of T
 
 ## Folder Contents
 
-- model-training: This folder contains the .ipynb notebooks used during the fine-tuning of our models.
+- model-trainings: This folder contains the .ipynb notebooks used during the fine-tuning of our models.
 
 - YogaAnalyzerApp: This folder contains the files required for the app. 
 
