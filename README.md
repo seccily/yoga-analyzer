@@ -1,5 +1,7 @@
 # Yoga Analyzer App
 
+The main purpose of this project is to combine several concepts of Internet of Things (IOT) with machine learning (ML), particularly deep learning. Following that, we would like to introduce our new app, Yoga Analyzer, which allows yoga practitioners to evaluate themselves immediately after the exercise session is over. In the following part of this section, we will subsequently explain the motivation behind this project, the algorithm we employed, and the dataset we utilized for fine-tuning. 
+
 ## Folder Contents
 
 - model-training: This folder contains the .ipynb notebooks used during the fine-tuning of our models.
