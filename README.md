@@ -8,7 +8,7 @@
 
 ## Details of how to run the project
 
-There are two methods to run the project:
+There are two options to run the project:
 1. By installing a virtual environment
 2. Via Docker image
 
