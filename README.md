@@ -12,7 +12,7 @@ The main purpose of this project is to combine several concepts of Internet of T
 
 To build and run the project, you first need to locate to **YogaAnalyzerApp** folder. There are two options to run the project:
 1. By installing a virtual environment
-2. Via Docker image
+2. Via a Docker image
 
 ### 1. Running the project with virtual environment
 
