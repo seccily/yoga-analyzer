@@ -32,4 +32,4 @@ After the image is built, the following command should be used to run it.
 
 	docker run -p 8501:8501 USER_NAME/REPO_NAME
 
-After this command, you need to connect to **localhost:8501** from the browser.
+After this command, you need to connect to **localhost:8501** from the browser to run the app.
