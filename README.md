@@ -1,20 +1,18 @@
 # Yoga Analyzer App
 
-## model-trainings
+## Folder Contents
 
-This folder contains the .ipynb notebooks used during the fine-tuning of our models.
+- model-training: This folder contains the .ipynb notebooks used during the fine-tuning of our models.
 
-## YogaAnalyzerApp
+- YogaAnalyzerApp: This folder contains the files required for the app. 
 
-This folder contains the files required for the app. 
-
-### Details of how to run the project
+## Details of how to run the project
 
 There are two methods to run the project:
 1. By installing a virtual environment
 2. Via Docker image
 
-#### 1. Running the project with virtual environment
+### 1. Running the project with virtual environment
 
 To run the project with a virtual environment, a virtual environment with python==3.11 version is required. After the requirements are downloaded in the virtual environment, the following command should be used to run the project.
 
@@ -22,7 +20,7 @@ To run the project with a virtual environment, a virtual environment with python
 
 With this command, we will connect to localhost in the browser and our app will run.
 
-#### 2. Building the project with Docker
+### 2. Building the project with Docker
 
 > **WARNING:** Since we could not grant camera permission in the Docker image, our application's pose detection via webcam feature may not work if the project is built with Docker. However, you can still examine the application through the demo video we have included in the application.
 
