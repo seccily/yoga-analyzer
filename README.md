@@ -52,7 +52,28 @@ After the session, either an evaluation checklist or a bar chart is provided to 
 On the other hand, the bar chart shows the degree of success which is more detailed than a binary decision.
 ![image](https://github.com/user-attachments/assets/5a3aa2eb-4c97-4093-b127-0480fb6b62b1)
 
-The app includes a demo video for illustration purposes. Similar to the real-time application, while the video is playing, our app performs an evaluation process and returns the result in the end of the video.
+The app includes a demo video for illustration purposes. Similar to the real-time application, while the video is playing,  our app performs an evaluation process and returns the result in the end of the video.
+
+### Analysis in Detail
+
+#### Basic Analysis
+
+Calculations made in the basic analysis option are presented to the user in a very superficial way. As we mentioned before, two types of input are received from the user; (1) the planned poses and their planned durations during the training, (2) a tolerance value to be taken into account during comparisons of the planned and performed durations for the poses. With the table created at the end of the comparison, information is reported on whether the user performed the pose or not, and if so, whether he/she did it within the given time and tolerance range.
+
+#### Detailed Analysis
+
+In the detailed analysis part, compared to the basic analysis, it takes into account not only whether the poses were done or not, but also poses that were done throughout the training but were not in the planned routine. Poses that the user does not add to his routine, but does during the routine, appear as a negative effect on the output. In addition, since the analysis is presented to the user graphically, it provides a more professional analysis experience for the user. Three separate bar graphs are presented in this analysis; duration difference, confidence scores, and overall score. For each graph, the user has the opportunity to examine the graphs interactively with the help of mouse control.
+
+A very simple approach was preferred when calculating the duration difference. The durations for all poses the user has done and planned to do are compared regardless of a tolerance value. If the user planned a pose but did not do it, the duration for this pose is shown on the graph as a negative value. On the other hand, doing the planned pose for more than the planned duration is shown on the graph as a positive value.
+
+The confidence score graph is actually a symbol of how reliable the model is for the poses it detects. At this point, we applied a threshold of 0.7 in our beginner model and 0.5 in our advanced model to make the predictions made by the model more reliable. We ignored the predictions made at lower thresholds, assuming that they were poses that the model was not sure about and therefore the user might not have done them correctly. 
+
+Last but not least, we used a scoring metric for all detected and planned poses in the overall score section:
+
+![image](https://github.com/user-attachments/assets/41947d10-fc10-45b4-97e4-b1fc0517d84d)
+
+In the overall score metric, W_confidence and W_duration weights were determined for both the confidence score and the duration difference, respectively. Since the difference in duration was desired to have a greater impact on the metric, its weight was preferred as 70%. On the contrary, since it was desired to have less impact on the metric, the weight of the model's confidence for the pose was determined as 30%. In the overall score, if the user performs the planned pose for more than the planned time, the score increases. On the contrary, doing the pose in less time than planned or doing a pose that was not planned will reduce the score. In this way, it is aimed for the user to both stick to the planned routine and be motivated by trying to get a higher score.
+
 
 ## Folder Contents
 
@@ -76,7 +97,7 @@ With this command, we will connect to localhost in the browser and our app will 
 
 ### 2. Building the project with Docker
 
-> **WARNING:** Since we could not grant camera permission in the Docker image, our application's pose detection via the webcam feature may not work if the project is built with Docker. However, you can still examine the application through the demo video we have included in the application.
+> **WARNING:** Since we could not grant camera permission in the Docker image, our application's pose detection via webcam feature may not work if the project is built with Docker. However, you can still examine the application through the demo video we have included in the application.
 
 Dockerfile was created in the folder to build the project with Docker. The following command can be used to build the Docker image.
 
