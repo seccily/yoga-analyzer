@@ -52,8 +52,7 @@ After the session, either an evaluation checklist or a bar chart is provided to 
 On the other hand, the bar chart shows the degree of success which is more detailed than a binary decision.
 ![image](https://github.com/user-attachments/assets/5a3aa2eb-4c97-4093-b127-0480fb6b62b1)
 
-The app includes a demo video for illustration purposes. Similar to the real-time application, while the video is playing,  
-our app performs an evaluation process and returns the result in the end of the video.
+The app includes a demo video for illustration purposes. Similar to the real-time application, while the video is playing, our app performs an evaluation process and returns the result in the end of the video.
 
 ## Folder Contents
 
@@ -77,7 +76,7 @@ With this command, we will connect to localhost in the browser and our app will 
 
 ### 2. Building the project with Docker
 
-> **WARNING:** Since we could not grant camera permission in the Docker image, our application's pose detection via webcam feature may not work if the project is built with Docker. However, you can still examine the application through the demo video we have included in the application.
+> **WARNING:** Since we could not grant camera permission in the Docker image, our application's pose detection via the webcam feature may not work if the project is built with Docker. However, you can still examine the application through the demo video we have included in the application.
 
 Dockerfile was created in the folder to build the project with Docker. The following command can be used to build the Docker image.
 
