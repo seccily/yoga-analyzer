@@ -3,6 +3,8 @@
 
 The main purpose of this project is to combine several concepts of the Internet of Things (IOT) with machine learning (ML), particularly deep learning. Following that, we would like to introduce our new app, Yoga Analyzer, which allows yoga practitioners to evaluate themselves immediately after the exercise session is over. In the following part of this section, we will subsequently explain the motivation behind this project, the algorithm we employed, and the dataset we utilized for fine-tuning. 
 
+---
+
 ## Method
 
 The Yoga Analyzer app uses the state-of-the-art You Only Look Once version 8 (YOLOv8) model for yoga routine analysis. Since our goal was to recognize and evaluate various yoga poses performed by a single person during their routine, we used YOLOv8, known for its speed and accuracy, to perform a classification task instead of traditional object detection.
@@ -28,28 +30,37 @@ Due to the higher number of classes in the training performed with this data set
 
 ![image](https://github.com/user-attachments/assets/f8c61f9a-21ee-4759-8c83-37826f7aed0f)
 
+---
+
 ## Yoga Analyzer
 
 ### App Interface and Usage
 
 Our app provides basic or detailed analysis based on the selection. If the user is not sure about his/her preferences, we have also covered that. Under each option, there is a description which helps the user to find the appropriate choices and mentions the evaluation criteria.  We also included a duration tolerance slider bar in basic analysis. With this addition, the user can arrange the strictness of the evaluation algorithm.
-![image](https://github.com/user-attachments/assets/c939cc93-46f9-4b3f-bdc4-8e77897680c8) ![image](https://github.com/user-attachments/assets/3d1297d5-ad93-4723-80a0-de8437fd4e64)
+
+![image](https://github.com/user-attachments/assets/c939cc93-46f9-4b3f-bdc4-8e77897680c8) 
+![image](https://github.com/user-attachments/assets/3d1297d5-ad93-4723-80a0-de8437fd4e64)
 
 
 After arranging the application configurations based on his/her needs, a user only needs to enter the exercises and corresponding durations of the session. There are 5 exercise options in the app for beginners including "downdog", "goddess", "plank", "tree" and "warrior2" and 47 for the advanced yogis. 
+
 ![image](https://github.com/user-attachments/assets/71214bbb-07c1-40a1-86cf-e2612ba98994)
 
 
 If the user tries to start recording without adding the routine, he/she will encounter an error message.
+
 ![image](https://github.com/user-attachments/assets/971bd49b-4235-4ac3-b543-577d45105815)
 
 Our app is designed for real-life analysis. In other words, instead of uploading a video recording of an exercise session, our app gets the video recording while the user performing his/her routine. The user can also monitor the poses and durations detected by our app at the end of the exercise session.
+
 ![image](https://github.com/user-attachments/assets/d78e538f-b2ba-4ca5-9920-7fc70d79ab3a)
 
 After the session, either an evaluation checklist or a bar chart is provided to the user depending on the analysis selection. The ticks refer to the exercises that are performed correctly and determined based on tolerance settings that are arranged by the user prior to the exercise session.
+
 ![image](https://github.com/user-attachments/assets/0e2edce4-4f51-4ee5-b8bb-332805cc37cf)
 
 On the other hand, the bar chart shows the degree of success which is more detailed than a binary decision.
+
 ![image](https://github.com/user-attachments/assets/5a3aa2eb-4c97-4093-b127-0480fb6b62b1)
 
 The app includes a demo video for illustration purposes. Similar to the real-time application, while the video is playing,  our app performs an evaluation process and returns the result in the end of the video.
@@ -74,12 +85,15 @@ Last but not least, we used a scoring metric for all detected and planned poses 
 
 In the overall score metric, W_confidence and W_duration weights were determined for both the confidence score and the duration difference, respectively. Since the difference in duration was desired to have a greater impact on the metric, its weight was preferred as 70%. On the contrary, since it was desired to have less impact on the metric, the weight of the model's confidence for the pose was determined as 30%. In the overall score, if the user performs the planned pose for more than the planned time, the score increases. On the contrary, doing the pose in less time than planned or doing a pose that was not planned will reduce the score. In this way, it is aimed for the user to both stick to the planned routine and be motivated by trying to get a higher score.
 
+---
 
 ## Folder Contents
 
 - model-trainings: This folder contains the .ipynb notebooks used during the fine-tuning of our models.
 
 - YogaAnalyzerApp: This folder contains the files required for the app. 
+
+---
 
 ## Details of how to run the project
 
