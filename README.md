@@ -1,7 +1,7 @@
 
 # Yoga Analyzer App
 
-The main purpose of this project is to combine several concepts of Internet of Things (IOT) with machine learning (ML), particularly deep learning. Following that, we would like to introduce our new app, Yoga Analyzer, which allows yoga practitioners to evaluate themselves immediately after the exercise session is over. In the following part of this section, we will subsequently explain the motivation behind this project, the algorithm we employed, and the dataset we utilized for fine-tuning. 
+The main purpose of this project is to combine several concepts of the Internet of Things (IOT) with machine learning (ML), particularly deep learning. Following that, we would like to introduce our new app, Yoga Analyzer, which allows yoga practitioners to evaluate themselves immediately after the exercise session is over. In the following part of this section, we will subsequently explain the motivation behind this project, the algorithm we employed, and the dataset we utilized for fine-tuning. 
 
 ## Method
 
@@ -33,10 +33,10 @@ Due to the higher number of classes in the training performed with this data set
 ### App Interface and Usage
 
 Our app provides basic or detailed analysis based on the selection. If the user is not sure about his/her preferences, we have also covered that. Under each option, there is a description which helps the user to find the appropriate choices and mentions the evaluation criteria.  We also included a duration tolerance slider bar in basic analysis. With this addition, the user can arrange the strictness of the evaluation algorithm.
-![image](https://github.com/user-attachments/assets/c939cc93-46f9-4b3f-bdc4-8e77897680c8)
-![image](https://github.com/user-attachments/assets/3d1297d5-ad93-4723-80a0-de8437fd4e64)
+![image](https://github.com/user-attachments/assets/c939cc93-46f9-4b3f-bdc4-8e77897680c8) ![image](https://github.com/user-attachments/assets/3d1297d5-ad93-4723-80a0-de8437fd4e64)
 
-After arranging the application configurations based on his/her needs, the only thing a user needs to do is to enter the exercises and corresponding durations of the exercise session. There are 5 exercise options in the app for beginners including "downdog", "goddess", "plank", "tree" and "warrior2" and 47 for the advanced yogis. 
+
+After arranging the application configurations based on his/her needs, a user only needs to enter the exercises and corresponding durations of the session. There are 5 exercise options in the app for beginners including "downdog", "goddess", "plank", "tree" and "warrior2" and 47 for the advanced yogis. 
 ![image](https://github.com/user-attachments/assets/71214bbb-07c1-40a1-86cf-e2612ba98994)
 
 
@@ -62,9 +62,9 @@ Calculations made in the basic analysis option are presented to the user in a ve
 
 #### Detailed Analysis
 
-In the detailed analysis part, compared to the basic analysis, it takes into account not only whether the poses were done or not, but also poses that were done throughout the training but were not in the planned routine. Poses that the user does not add to his routine, but does during the routine, appear as a negative effect on the output. In addition, since the analysis is presented to the user graphically, it provides a more professional analysis experience for the user. Three separate bar graphs are presented in this analysis; duration difference, confidence scores, and overall score. For each graph, the user has the opportunity to examine the graphs interactively with the help of mouse control.
+The detailed analysis part, compared to the basic analysis, takes into account not only whether the poses were done or not, but also poses that were done throughout the training but were not in the planned routine. Poses that the user does not add to his routine, but does during the routine, appear as a negative effect on the output. In addition, since the analysis is presented to the user graphically, it provides a more professional analysis experience for the user. Three separate bar graphs are presented in this analysis; duration difference, confidence scores, and overall score. For each graph, the user has the opportunity to examine the graphs interactively with the help of mouse control.
 
-A very simple approach was preferred when calculating the duration difference. The durations for all poses the user has done and planned to do are compared regardless of a tolerance value. If the user planned a pose but did not do it, the duration for this pose is shown on the graph as a negative value. On the other hand, doing the planned pose for more than the planned duration is shown on the graph as a positive value.
+A straightforward approach was preferred when calculating the duration difference. The durations for all poses the user has done and planned to do are compared regardless of a tolerance value. If the user planned a pose but did not do it, the duration for this pose is shown on the graph as a negative value. On the other hand, doing the planned pose for more than the planned duration is shown on the graph as a positive value.
 
 The confidence score graph is actually a symbol of how reliable the model is for the poses it detects. At this point, we applied a threshold of 0.7 in our beginner model and 0.5 in our advanced model to make the predictions made by the model more reliable. We ignored the predictions made at lower thresholds, assuming that they were poses that the model was not sure about and therefore the user might not have done them correctly. 
 
@@ -87,7 +87,7 @@ To build and run the project, you first need to locate to **YogaAnalyzerApp** fo
 1. By installing a virtual environment
 2. Via a Docker image
 
-### 1. Running the project with virtual environment
+### 1. Running the project with the virtual environment
 
 To run the project with a virtual environment, a virtual environment with python==3.11 version is required. After the requirements are downloaded in the virtual environment, the following command should be used to run the project.
 
@@ -97,7 +97,7 @@ With this command, we will connect to localhost in the browser and our app will 
 
 ### 2. Building the project with Docker
 
-> **WARNING:** Since we could not grant camera permission in the Docker image, our application's pose detection via webcam feature may not work if the project is built with Docker. However, you can still examine the application through the demo video we have included in the application.
+> **WARNING:** Since we could not grant camera permission in the Docker image, our application's pose detection via the webcam feature may not work if the project is built with Docker. However, you can still examine the application through the demo video we have included in the application.
 
 Dockerfile was created in the folder to build the project with Docker. The following command can be used to build the Docker image.
 
